@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PriceOptima</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<main class="container">
+
+    <!-- Nav -->
+    <header class="site-header">
+        <div class="nav-logo">
+            <div class="logo-mark"><i class="ph-fill ph-currency-inr"></i></div>
+            <span class="logo-name">PriceOptima</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#">How it works</a>
+            <a href="#">Platforms</a>
+            <a href="#">About</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+
+        <div class="hero-eyebrow">
+            <span class="eyebrow-dot"></span>
+            Live across Amazon · Flipkart · Croma · Reliance Digital
+        </div>
+
+        <h1>Find the best price,<br><em>instantly.</em></h1>
+
+        <p class="hero-sub">Paste any product URL and we'll scan every major Indian platform — no estimates, no guesses, only real prices.</p>
+
+        <form id="compare-form" autocomplete="off">
+            <div class="input-wrapper" id="input-wrapper">
+                <i class="ph ph-link-simple input-icon"></i>
+                <input
+                    id="product-url"
+                    type="url"
+                    required
+                    spellcheck="false"
+                    placeholder="Paste a product URL — amazon.in, flipkart.com, croma.com…"
+                >
+                <button type="submit" id="compare-btn">
+                    <span>Compare Prices</span>
+                    <i class="ph ph-arrow-right btn-arrow"></i>
+                </button>
+            </div>
+        </form>
+
+        <p class="hero-hint"><i class="ph ph-info"></i>&nbsp; Works with Amazon, Flipkart, Croma, Reliance Digital and more</p>
+
+    </section>
+
+    <!-- Results -->
+    <section id="results-area" class="hidden">
+
+        <!-- Loader -->
+        <div id="loader" class="loader-container hidden">
+            <div class="loader-inner">
+                <div class="spinner-ring"></div>
+                <p class="loader-label">Scanning all platforms…</p>
+            </div>
+            <div class="progress-track">
+                <div id="progress" class="progress-fill"></div>
+            </div>
+        </div>
+
+        <!-- Error -->
+        <div id="error-msg" class="error-card hidden">
+            <div class="error-icon"><i class="ph ph-warning-circle"></i></div>
+            <div>
+                <p class="error-title">Something went wrong</p>
+                <p id="error-text" class="error-body"></p>
+            </div>
+        </div>
+
+        <!-- Data -->
+        <div id="data-view" class="hidden">
+
+            <p class="result-label">Results for</p>
+            <h2 id="res-product-name" class="result-title"></h2>
+
+            <!-- Best Deal Banner -->
+            <div id="best-deal-banner" class="best-deal hidden">
+                <div class="best-deal-left">
+                    <span class="best-badge"><i class="ph-fill ph-seal-check"></i> Best Deal</span>
+                    <span id="best-site" class="best-site"></span>
+                </div>
+                <div class="best-deal-right">
+                    <span id="best-price" class="best-price"></span>
+                    <a id="best-deal-link" target="_blank" rel="noopener" class="btn-buy">
+                        Buy now <i class="ph ph-arrow-up-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cards -->
+            <div id="platforms-grid"></div>
+
+            <div class="new-search-row">
+                <button id="new-search-btn" class="btn-outline">
+                    <i class="ph ph-arrows-clockwise"></i> Compare another product
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>

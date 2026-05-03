@@ -1,0 +1,1 @@
+﻿import sys; sys.path.append('backend'); from app import app; app.testing = True; client = app.test_client(); res = client.post('/compare', json={'url': 'https://www.amazon.in/Apple-MacBook-Chip-13-inch-256GB/dp/B08N5W4NNB'}); print(res.get_json())

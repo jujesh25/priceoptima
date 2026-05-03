@@ -1,0 +1,9 @@
+flask
+flask-cors
+selenium
+beautifulsoup4
+requests
+webdriver-manager
+undetected-chromedriver
+curl_cffi
+lxml

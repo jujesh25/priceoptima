@@ -1,0 +1,1 @@
+﻿import sys; sys.path.append('backend'); from scrapers.croma import CromaScraper; s=CromaScraper(); print('Croma:', s.search_product('Apple MacBook M1')); from scrapers.reliance import RelianceScraper; r=RelianceScraper(); print('Reliance:', r.search_product('Apple MacBook M1'))
